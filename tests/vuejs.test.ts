@@ -1,11 +1,11 @@
-const { axe, toHaveNoViolations } = require('../src/index')
+import { axe, toHaveNoViolations } from '../src'
 
 const Image = {
   data: () => ({ src: '#' }),
   template: '<img id="test-image" :src="src" />'
 }
 
-expect.extend(toHaveNoViolations)
+expect.extend({ toHaveNoViolations })
 
 describe('Vue', () => {
   it('renders correctly', async () => {

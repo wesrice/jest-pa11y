@@ -1,9 +1,9 @@
-const { axe, toHaveNoViolations } = require('../src/index')
+import { axe, toHaveNoViolations } from '../src'
 
 const React = require('react')
 const ReactDOMServer = require('react-dom/server')
 
-expect.extend(toHaveNoViolations)
+expect.extend({ toHaveNoViolations })
 
 describe('React', () => {
 

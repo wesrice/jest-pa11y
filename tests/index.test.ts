@@ -1,6 +1,7 @@
 /* eslint-env jest */
 
-const { configureAxe, axe, toHaveNoViolations } = require('../src/index.js')
+import { AxeResults } from 'axe-core';
+import { configureAxe, axe, toHaveNoViolations } from '../src'
 
 describe('jest-axe', () => {
   describe('axe', () => {
@@ -38,7 +39,7 @@ describe('jest-axe', () => {
     })
 
     it('can be configured for global configs', async () => {
-      const results = await linkNameAxe(failingHtmlExample)
+      const results = await linkNameAxe(failingHtmlExample);
       expect(results.violations).toEqual([])
     })
 
@@ -198,45 +199,45 @@ describe('jest-axe', () => {
           ]
         }
       ]
-    }
+    } as unknown as AxeResults
 
     const successfulAxeResults = {
       violations: []
-    }
+    } as unknown as AxeResults;
     it('returns a jest matcher object with object', () => {
-      const matcherFunction = toHaveNoViolations.toHaveNoViolations
+      const matcherFunction = toHaveNoViolations
       expect(matcherFunction).toBeDefined()
       expect(typeof matcherFunction).toBe('function')
     })
 
     it('throws error if non axe results object is passed', () => {
-      const matcherFunction = toHaveNoViolations.toHaveNoViolations
+      const matcherFunction = toHaveNoViolations
       expect(() => {
-        matcherFunction({})
+        matcherFunction({} as unknown as AxeResults)
       }).toThrow('No violations found in aXe results object')
     })
 
     it('returns pass as true when no violations are present', () => {
-      const matcherFunction = toHaveNoViolations.toHaveNoViolations
+      const matcherFunction = toHaveNoViolations
       const matcherOutput = matcherFunction(successfulAxeResults)
       expect(matcherOutput.pass).toBe(true)
     })
 
     it('returns same violations that are passed in the results object', () => {
-      const matcherFunction = toHaveNoViolations.toHaveNoViolations
+      const matcherFunction = toHaveNoViolations
       const matcherOutput = matcherFunction(failingAxeResults)
       expect(matcherOutput.actual).toBe(failingAxeResults.violations)
     })
 
     it('returns correctly formatted message when violations are present', () => {
-      const matcherFunction = toHaveNoViolations.toHaveNoViolations
+      const matcherFunction = toHaveNoViolations
       const matcherOutput = matcherFunction(failingAxeResults)
       expect(typeof matcherOutput.message).toBe('function')
       expect(matcherOutput.message()).toMatchSnapshot()
     })
 
     it('returns pass as false when violations are present', () => {
-      const matcherFunction = toHaveNoViolations.toHaveNoViolations
+      const matcherFunction = toHaveNoViolations
       const matcherOutput = matcherFunction(failingAxeResults)
       expect(matcherOutput.pass).toBe(false)
     })
@@ -255,7 +256,7 @@ describe('jest-axe', () => {
         </html>
       `
       const results = await axe(complexHtmlExample)
-      const matcherFunction = toHaveNoViolations.toHaveNoViolations
+      const matcherFunction = toHaveNoViolations
       const matcherOutput = matcherFunction(results)
       expect(matcherOutput.message()).toMatchSnapshot()
     })
@@ -263,7 +264,7 @@ describe('jest-axe', () => {
   describe('readme', () => {
     describe('first readme example', () => {
 
-      expect.extend(toHaveNoViolations)
+      expect.extend({ toHaveNoViolations })
 
       it('should demonstrate this matcher`s usage', async () => {
         const render = () => '<img src="#"/>'
@@ -280,7 +281,7 @@ describe('jest-axe', () => {
     })
     describe('readme axe config example', () => {
 
-      expect.extend(toHaveNoViolations)
+      expect.extend({ toHaveNoViolations })
 
       it('should demonstrate this matcher`s usage with a custom config', async () => {
         const render = () => `
@@ -319,7 +320,7 @@ describe('jest-axe', () => {
       // Individual test file (test.js)
       const axe = exportedAxe // require('./axe-helper.js')
 
-      expect.extend(toHaveNoViolations)
+      expect.extend({ toHaveNoViolations })
 
       it('should demonstrate this matcher`s usage with a default config', async () => {
         const render = () => `
@@ -336,15 +337,14 @@ describe('jest-axe', () => {
     })
     describe('configure custom rule', () => {
 
-      expect.extend(toHaveNoViolations)
+      expect.extend({ toHaveNoViolations })
 
       it('should report custom rules', async () => {
 
         const check = {
           id: 'demo-has-data',
-          evaluate(node) {
+          evaluate(node: HTMLElement) {
             return node.hasAttribute('data-demo-rule');
-
           },
           metadata: {
             impact: 'serious',
