@@ -119,6 +119,8 @@ Received:
 [33m  Form element does not have an implicit (wrapped) <label>[39m
 [33m  Form element does not have an explicit <label>[39m
 [33m  Element has no title attribute or the title attribute is empty[39m
+[33m  Element's default semantics were not overridden with role=\\"none\\"[39m
+[33m  Element's default semantics were not overridden with role=\\"presentation\\"[39m
 
 You can find more information on this issue here: 
 [34mhttps://dequeuniversity.com/rules/axe/4.0/label?application=axeAPI[39m
@@ -142,6 +144,7 @@ Received:
 [33m  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty[39m
 [33m  Element's default semantics were not overridden with role=\\"presentation\\"[39m
 [33m  Element's default semantics were not overridden with role=\\"none\\"[39m
+[33m  Element has no title attribute or the title attribute is empty[39m
 
 You can find more information on this issue here: 
 [34mhttps://dequeuniversity.com/rules/axe/4.0/link-name?application=axeAPI[39m
@@ -163,6 +166,7 @@ Received:
 [33m  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty[39m
 [33m  Element's default semantics were not overridden with role=\\"presentation\\"[39m
 [33m  Element's default semantics were not overridden with role=\\"none\\"[39m
+[33m  Element has no title attribute or the title attribute is empty[39m
 
 You can find more information on this issue here: 
 [34mhttps://dequeuniversity.com/rules/axe/4.0/link-name?application=axeAPI[39m
