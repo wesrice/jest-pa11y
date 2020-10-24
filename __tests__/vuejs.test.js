@@ -1,4 +1,4 @@
-const { axe, toHaveNoViolations } = require('../index')
+const { axe, toHaveNoViolations } = require('../src/index')
 
 const Image = {
   data: () => ({ src: '#' }),
@@ -12,7 +12,7 @@ describe('Vue', () => {
     const { mount } = require('@vue/test-utils')
     const wrapper = mount(Image)
     const results = await axe(wrapper.element)
-    
+
     expect(() => {
       expect(results).toHaveNoViolations()
     }).toThrowErrorMatchingSnapshot()
@@ -22,7 +22,7 @@ describe('Vue', () => {
     const { render } = require('@testing-library/vue')
     const { container } = render(Image)
     const results = await axe(container)
-    
+
     expect(() => {
       expect(results).toHaveNoViolations()
     }).toThrowErrorMatchingSnapshot()

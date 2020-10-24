@@ -1,4 +1,4 @@
-const { axe, toHaveNoViolations } = require('../index')
+const { axe, toHaveNoViolations } = require('../src/index')
 
 const React = require('react')
 const ReactDOMServer = require('react-dom/server')
@@ -23,7 +23,7 @@ describe('React', () => {
     const element = React.createElement('img', { src: '#' })
     const { container } = render(element)
     const results = await axe(container)
-    
+
     expect(() => {
       expect(results).toHaveNoViolations()
     }).toThrowErrorMatchingSnapshot()

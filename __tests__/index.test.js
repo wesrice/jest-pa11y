@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-const { configureAxe, axe, toHaveNoViolations } = require('../index.js')
+const { configureAxe, axe, toHaveNoViolations } = require('../src/index.js')
 
 describe('jest-axe', () => {
   describe('axe', () => {
@@ -335,7 +335,7 @@ describe('jest-axe', () => {
       })
     })
     describe('configure custom rule', () => {
-      
+
       expect.extend(toHaveNoViolations)
 
       it('should report custom rules', async () => {
@@ -344,7 +344,7 @@ describe('jest-axe', () => {
           id: 'demo-has-data',
           evaluate(node) {
             return node.hasAttribute('data-demo-rule');
-            
+
           },
           metadata: {
             impact: 'serious',
