@@ -38,6 +38,9 @@
   "license": "MIT",
   "main": "src/index.js",
   "name": "jest-pa11y",
+  "peerDependencies": {
+    "pa11y": "^5.3.0"
+  },
   "repository": "wesrice/jest-pa11y",
   "scripts": {
     "test": "jest"
