@@ -1,4 +1,14 @@
+const tsPreset = require('ts-jest/presets/js-with-babel/jest-preset')
+
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'jsdom',
+  ...tsPreset,
+  globalSetup: './src/globalSetup.ts',
+  globalTeardown: './src/globalTeardown.ts',
+  modulePathIgnorePatterns: [
+    './dist'
+  ],
+  setupFilesAfterEnv: [
+    './src/extendExpect.ts',
+  ],
+  testEnvironment: './src/environment.js',
 };
