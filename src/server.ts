@@ -12,12 +12,12 @@ const server = http.createServer((_, res) => {
         <head></head>
         <body></body>
       </html>
-    `.trim()
+    `.trim(),
   );
 });
 
 export const startServer = () => {
-  server.listen(port)
+  server.listen(port);
   chalk.gray(`Pa11y server at port ${port} is running...`);
 };
 

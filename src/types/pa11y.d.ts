@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import pa11y from 'pa11y';
 
 declare module 'pa11y' {
@@ -19,7 +20,7 @@ declare module 'pa11y' {
       impact: string;
       help: string;
       helpUrl: string;
-    }
+    };
   }
 
   interface HtmlcsResultIssue extends ResultIssue {
@@ -32,4 +33,3 @@ declare module 'pa11y' {
     issues: ResultIssue[];
   }
 }
-

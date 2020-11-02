@@ -3,16 +3,16 @@ import { matcherHint } from 'jest-matcher-utils';
 import { Results, ResultIssue } from 'pa11y';
 import Table, { Header } from 'tty-table';
 
-const BR = "\n";
+const BR = '\n';
 
-export default (results: Results) : any => {
+export default (results: Results): any => {
   const { issues } = results;
 
   if (!issues) {
     return [];
   }
 
-  let header: Header[] = [
+  const header: Header[] = [
     {
       align: 'left',
       // Required property for some reason...
@@ -54,7 +54,7 @@ export default (results: Results) : any => {
       chalk.gray(`${BR}${formatedViolations.length} Pa11y violations:`),
       formatedViolations.join(BR),
     ].join(BR);
-  }
+  };
 
   return { actual: issues, message, pass } as any;
-}
+};
