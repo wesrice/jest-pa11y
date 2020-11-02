@@ -5,7 +5,8 @@ module.exports = {
   globalSetup: './src/globalSetup.ts',
   globalTeardown: './src/globalTeardown.ts',
   modulePathIgnorePatterns: [
-    './dist'
+    './build',
+    './tests/e2e',
   ],
   setupFilesAfterEnv: [
     './src/extendExpect.ts',
