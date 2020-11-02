@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: [10, 12, 14, 15]
+        node: [12, 14, 15]
         os:
           - ubuntu-latest
           - windows-latest
@@ -50,8 +50,6 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - name: Install
-        env:
-          CI: true
         run: npm install
       - name: Semantic Release
         if: success()
