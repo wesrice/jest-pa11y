@@ -52,11 +52,12 @@ it('should demonstrate this matcher`s usage', async () => {
 });
 ```
 
-![Screenshot of the resulting output from the usage example](example-cli.png)
+![Screenshot of the resulting output from the usage example](.github/example-cli.png)
 
 ### Pa11y configuration
 
-The `runPa11y` function allows options to be set with the [same options as documented in Pa11y](https://github.com/pa11y/pa11y#configuration):
+The `runPa11y` function allows options to be set with the
+[same options as documented in Pa11y](https://github.com/pa11y/pa11y#configuration):
 
 ```javascript
 const { runPa11y } = require('jest-pa11y');

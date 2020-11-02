@@ -56,7 +56,7 @@
   "repository": "wesrice/jest-pa11y",
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
-    "postinstall": "yarn build",
+    "postinstall": "npm run build",
     "test": "jest"
   },
   "types": "dist/src/index.d.ts",

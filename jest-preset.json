@@ -1,8 +1,8 @@
 {
-  "globalSetup": "jest-pa11y/globalSetup",
-  "globalTeardown": "jest-pa11y/globalTeardown",
+  "globalSetup": "jest-pa11y/build/globalSetup.js",
+  "globalTeardown": "jest-pa11y/build/globalTeardown.js",
   "setupFilesAfterEnv": [
-    "jest-pa11y/extendExpect"
+    "jest-pa11y/build/extendExpect.js"
   ],
-  "testEnvironment": "jest-pa11y/environment"
+  "testEnvironment": "jest-pa11y/build/environment.js"
 }
