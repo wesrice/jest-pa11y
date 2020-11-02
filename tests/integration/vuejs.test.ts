@@ -4,7 +4,7 @@ import Vue from 'vue';
 
 import { runPa11y } from '../../src';
 
-describe('Vue', () => {
+describe('vue', () => {
   let badElement: VueClass<Vue>;
   let goodElement: VueClass<Vue>;
 
@@ -22,45 +22,45 @@ describe('Vue', () => {
 
   describe('using Vue Test Utils', () => {
     it('accessible html elements do not throw Jest violations', async () => {
+      expect.assertions(2);
       const wrapper = mount(goodElement);
       const results = await runPa11y(wrapper.element, {
-        ignore: [
-          'region',
-        ],
+        ignore: ['region'],
       });
       expect(() => {
         expect(results).toHaveNoPa11yViolations();
-      }).not.toThrowError();
+      }).not.toThrow();
     });
 
     it('inaccessible html elements throw Jest violations', async () => {
+      expect.assertions(2);
       const wrapper = mount(badElement);
-      const results = await runPa11y(wrapper.element)
+      const results = await runPa11y(wrapper.element);
       expect(() => {
         expect(results).toHaveNoPa11yViolations();
-      }).toThrowError();
+      }).toThrow(Error);
     });
   });
 
   describe('using Vue Testing Library', () => {
     it('accessible html elements do not throw Jest violations', async () => {
+      expect.assertions(2);
       const { container } = render(goodElement);
       const results = await runPa11y(container, {
-        ignore: [
-          'region',
-        ],
+        ignore: ['region'],
       });
       expect(() => {
         expect(results).toHaveNoPa11yViolations();
-      }).not.toThrowError();
+      }).not.toThrow();
     });
 
     it('inaccessible html elements throw Jest violations', async () => {
+      expect.assertions(2);
       const { container } = render(goodElement);
-      const results = await runPa11y(container)
+      const results = await runPa11y(container);
       expect(() => {
         expect(results).toHaveNoPa11yViolations();
-      }).toThrowError();
+      }).toThrow(Error);
     });
   });
 });

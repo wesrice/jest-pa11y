@@ -37,7 +37,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'jest', 'import', 'prettier', 'security'],
   rules: {
-    'jest/no-hooks': ['error', { allow: ['afterEach'] }],
+    'jest/no-hooks': ['error', { allow: ['afterEach', 'beforeAll'] }],
     'prettier/prettier': 'error',
   },
 };

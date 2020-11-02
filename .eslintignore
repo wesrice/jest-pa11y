@@ -1,0 +1,9 @@
+**/node_modules/**
+build
+coverage
+!.commitlintrc.js
+!.huskyrc.js
+!.jestrc.js
+!.lintstagedrc.js
+!.prettierrc.js
+!.releaserc.js
