@@ -34,11 +34,7 @@
     "node": ">= 10.0.0"
   },
   "files": [
-    "build/environment.js",
-    "build/index.js",
-    "build/globalSetup.js",
-    "build/server.js",
-    "build/globalTeardown.js"
+    "build/*"
   ],
   "keywords": [
     "jest",
@@ -55,10 +51,10 @@
   },
   "repository": "wesrice/jest-pa11y",
   "scripts": {
-    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "build": "rm -rf build && tsc -p tsconfig.build.json",
     "postinstall": "npm run build",
     "test": "jest"
   },
-  "types": "dist/src/index.d.ts",
-  "version": "0.1.0"
+  "types": "build/*",
+  "version": "0.2.0"
 }
