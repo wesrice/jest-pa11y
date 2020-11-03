@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/wesrice/jest-pa11y/compare/v1.1.1...v1.1.2) (2020-11-03)
+
+
+### Bug Fixes
+
+* only publish build files ([04db3ba](https://github.com/wesrice/jest-pa11y/commit/04db3baf90ed2c7fa4bd818bdd80136e43d721f1))
+
 ## [1.1.1](https://github.com/wesrice/jest-pa11y/compare/v1.1.0...v1.1.1) (2020-11-03)
 
 
