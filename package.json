@@ -57,6 +57,9 @@
   "engines": {
     "node": ">= 12.0.0"
   },
+  "files": [
+    "build/*"
+  ],
   "keywords": [
     "jest",
     "matcher",
@@ -75,7 +78,6 @@
     "build": "rm -rf build && tsc -p tsconfig.build.json",
     "lint": "eslint . --ext js,ts",
     "lint:fix": "npm run lint -- --fix",
-    "postinstall": "npm run build",
     "semantic-release": "semantic-release",
     "test": "jest --config .jestrc.js"
   },
