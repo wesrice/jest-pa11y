@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/wesrice/jest-pa11y/compare/v1.1.0...v1.1.1) (2020-11-03)
+
+
+### Bug Fixes
+
+* include all files in npm package ([ae35ff6](https://github.com/wesrice/jest-pa11y/commit/ae35ff69590232dc7e5fdc4798b58321e2aae7e2))
+* package TypeScript configs when publishing to NPM ([a19cdd0](https://github.com/wesrice/jest-pa11y/commit/a19cdd0a762c4c25cac5b192bc214a2a8d14dc10))
+* remove passing of commit message to commitizen ([badc7c7](https://github.com/wesrice/jest-pa11y/commit/badc7c7ee8f270c540ea45a786c551d2f6a272b8))
+
 # [1.1.0](https://github.com/wesrice/jest-pa11y/compare/v1.0.0...v1.1.0) (2020-11-03)
 
 
