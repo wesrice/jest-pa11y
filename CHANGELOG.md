@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/wesrice/jest-pa11y/compare/v1.0.0...v1.1.0) (2020-11-03)
+
+
+### Bug Fixes
+
+* prevent running of test workflow in release branch pushes ([f77c375](https://github.com/wesrice/jest-pa11y/commit/f77c37521d378b6e1c8eeacc8b99f2c3c78736f9))
+
+
+### Features
+
+* add Commitizen integration ([136cf3c](https://github.com/wesrice/jest-pa11y/commit/136cf3c52ce22b5441990bb929601aca80a57caf))
+* remove assets from distribution pipeline ([7bad382](https://github.com/wesrice/jest-pa11y/commit/7bad3825af87693af54494d629d2e1d78c01f8bd))
+
 # 1.0.0 (2020-11-03)
 
 
