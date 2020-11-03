@@ -79,6 +79,7 @@
     "lint": "eslint . --ext js,ts",
     "lint:fix": "npm run lint -- --fix",
     "postinstall": "npm run build",
+    "semantic-release": "semantic-release",
     "test": "jest --config .jestrc.js"
   },
   "types": "build/*",
