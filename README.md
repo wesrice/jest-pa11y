@@ -2,9 +2,9 @@
   <small>🚨 🚨 🚨  Using `jest-pa11y` does not guarantee what your components are accessible!  🚨 🚨 🚨</small>
 </h4>
 
-* * *
-
 ## jest-pa11y
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 `jest-pa11y` is a custom [Jest](https://jestjs.io/) matcher for [Pa11y](https://pa11y.org/),
 useful for testing the accessibility of html, React components or Vue components.

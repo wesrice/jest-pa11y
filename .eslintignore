@@ -2,6 +2,7 @@
 build
 coverage
 !.commitlintrc.js
+!.czrc.js
 !.huskyrc.js
 !.jestrc.js
 !.lintstagedrc.js
