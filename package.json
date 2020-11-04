@@ -46,7 +46,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-security": "^1.4.0",
     "husky": "^4.3.0",
-    "jest": "^26.0.1",
+    "jest": "^26.6.3",
     "lint-staged": "^10.5.1",
     "prettier": "2.1.2",
     "semantic-release": "^17.2.2",
@@ -79,7 +79,7 @@
     "lint": "eslint . --ext js,ts",
     "lint:fix": "npm run lint -- --fix",
     "semantic-release": "semantic-release",
-    "test": "jest --config .jestrc.js"
+    "test": "jest --config .jestrc.js --runInBand --detectOpenHandles --forceExit"
   },
   "types": "build/*",
   "version": "1.1.2"
