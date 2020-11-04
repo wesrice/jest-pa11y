@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/wesrice/jest-pa11y/compare/v1.1.2...v1.1.3) (2020-11-04)
+
+
+### Bug Fixes
+
+* ensure `toHaveNoPa11yViolations` is exported from module ([1d59149](https://github.com/wesrice/jest-pa11y/commit/1d59149ee775715f4a5b1ba978063512fba081ec))
+* ensure Jest preset is exported as part of NPM package ([589f919](https://github.com/wesrice/jest-pa11y/commit/589f919d1bf35604398c617e9006616a09267af6))
+* ensure typings are found ([e579d73](https://github.com/wesrice/jest-pa11y/commit/e579d7304957b86cbe08b49abd40fd9b29feaf1d))
+* jest no longer hangs on macOS ([ed664b8](https://github.com/wesrice/jest-pa11y/commit/ed664b8cc9c89a8f1f4ea6028db373b75c5b4b0c))
+
 ## [1.1.2](https://github.com/wesrice/jest-pa11y/compare/v1.1.1...v1.1.2) (2020-11-03)
 
 
