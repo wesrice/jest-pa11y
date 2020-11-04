@@ -76,6 +76,7 @@
   "repository": "wesrice/jest-pa11y",
   "scripts": {
     "build": "rm -rf build && tsc -p tsconfig.build.json",
+    "commit": "cz",
     "lint": "eslint . --ext js,ts",
     "lint:fix": "npm run lint -- --fix",
     "semantic-release": "semantic-release",
