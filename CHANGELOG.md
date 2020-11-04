@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/wesrice/jest-pa11y/compare/v1.1.3...v1.1.4) (2020-11-04)
+
+
+### Bug Fixes
+
+* add TypeScript e2e tests to ensure typings work properly ([0937a42](https://github.com/wesrice/jest-pa11y/commit/0937a4228e1ccc1c3cd51d0217ee954369867b94))
+
 ## [1.1.3](https://github.com/wesrice/jest-pa11y/compare/v1.1.2...v1.1.3) (2020-11-04)
 
 
