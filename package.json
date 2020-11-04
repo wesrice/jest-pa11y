@@ -81,6 +81,6 @@
     "semantic-release": "semantic-release",
     "test": "jest --config .jestrc.js --runInBand --detectOpenHandles --forceExit"
   },
-  "types": "build/*",
+  "types": "build/index.d.ts",
   "version": "1.1.2"
 }
