@@ -58,7 +58,8 @@
     "node": ">= 12.0.0"
   },
   "files": [
-    "build/*"
+    "build",
+    "jest-preset.json"
   ],
   "keywords": [
     "jest",
