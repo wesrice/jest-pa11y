@@ -80,6 +80,7 @@
     "commit": "cz",
     "lint": "eslint . --ext js,ts",
     "lint:fix": "npm run lint -- --fix",
+    "postbuild": "cp -R src/types ./build",
     "semantic-release": "semantic-release",
     "test": "jest --config .jestrc.js --runInBand --detectOpenHandles --forceExit"
   },

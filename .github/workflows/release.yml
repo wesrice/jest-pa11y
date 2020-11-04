@@ -32,12 +32,20 @@ jobs:
       - name: Test
         run: npm run test
       - run: npm link
+
       - run: npm install
         working-directory: tests/e2e/js
       - run: npm link 'jest-pa11y'
         working-directory: tests/e2e/js
-      - run: npm test
+      - run: npm run test
         working-directory: tests/e2e/js
+
+      - run: npm install
+        working-directory: tests/e2e/ts
+      - run: npm link 'jest-pa11y'
+        working-directory: tests/e2e/ts
+      - run: npm run test
+        working-directory: tests/e2e/ts
 
   release:
     name: npm publish / GitHub release
