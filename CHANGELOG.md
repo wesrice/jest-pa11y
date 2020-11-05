@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/wesrice/jest-pa11y/compare/v1.1.4...v1.1.5) (2020-11-05)
+
+
+### Bug Fixes
+
+* move unneeded deps to devDeps ([a793873](https://github.com/wesrice/jest-pa11y/commit/a79387313a8eb001e5a09d5352acbb6478d1d7fe))
+* s/JavaScript/TypeScript/ ([638374b](https://github.com/wesrice/jest-pa11y/commit/638374b3f8b54ac28f7f599f61c70d2569b55e14))
+
 ## [1.1.4](https://github.com/wesrice/jest-pa11y/compare/v1.1.3...v1.1.4) (2020-11-04)
 
 

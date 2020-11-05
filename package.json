@@ -87,5 +87,5 @@
     "test:unit": "jest ./src --config .jestrc.js --runInBand --detectOpenHandles --forceExit"
   },
   "types": "build/index.d.ts",
-  "version": "1.1.4"
+  "version": "1.1.5"
 }
