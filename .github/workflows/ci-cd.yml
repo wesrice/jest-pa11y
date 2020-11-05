@@ -62,7 +62,7 @@ jobs:
         run: npm run test
         working-directory: tests/e2e/js
 
-      - name: Install JavaScript end-to-end test dependencies
+      - name: Install TypeScript end-to-end test dependencies
         run: npm install
         working-directory: tests/e2e/ts
 
