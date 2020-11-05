@@ -82,7 +82,9 @@
     "lint:fix": "npm run lint -- --fix",
     "postbuild": "cp -R src/types ./build",
     "semantic-release": "semantic-release",
-    "test": "jest --config .jestrc.js --runInBand --detectOpenHandles --forceExit"
+    "test": "npm run test:unit && npm run test:integration && npm run test:e2e",
+    "test:integration": "jest ./tests/integration --config .jestrc.js --runInBand --detectOpenHandles --forceExit",
+    "test:unit": "jest ./src --config .jestrc.js --runInBand --detectOpenHandles --forceExit"
   },
   "types": "build/index.d.ts",
   "version": "1.1.4"

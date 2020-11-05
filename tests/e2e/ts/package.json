@@ -2,11 +2,11 @@
   "dependencies": {
     "jest": "^26.6.1"
   },
-  "description": "End-to-end test for `jest-pa11y` + JavaScript",
+  "description": "End-to-end test for `jest-pa11y` + TypeScript",
   "jest": {
     "preset": "jest-pa11y"
   },
-  "name": "jest-pa11y-e2e-js",
+  "name": "jest-pa11y-e2e-ts",
   "scripts": {
     "tsc": "tsc",
     "test": "jest --config .jestrc.js"
