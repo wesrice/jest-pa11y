@@ -1,0 +1,104 @@
+name: CI/CD
+on:
+  pull_request:
+
+jobs:
+  test:
+    name: Test with Node v${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [12, 14, 15]
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node v${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Cache Node modules
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Run integration tests
+        run: npm run test:integration
+
+      - name: Make `jest-pa11y` dependency linkable
+        run: npm link
+
+      - name: Install JavaScript end-to-end test dependencies
+        run: npm install
+        working-directory: tests/e2e/js
+
+      - name: Link to `jest-pally` dependency
+        run: npm link 'jest-pa11y'
+        working-directory: tests/e2e/js
+
+      - name: Run JavaScript end-to-end tests
+        run: npm run test
+        working-directory: tests/e2e/js
+
+      - name: Install JavaScript end-to-end test dependencies
+        run: npm install
+        working-directory: tests/e2e/ts
+
+      - name: Link to `jest-pally` dependency
+        run: npm link 'jest-pa11y'
+        working-directory: tests/e2e/ts
+
+      - name: Run TypeScript end-to-end tests
+        run: npm run test
+        working-directory: tests/e2e/ts
+
+  release:
+    if: github.ref == 'refs/heads/main'
+    name: npm publish / GitHub release
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install
+        run: npm ci
+        env:
+          CI: true
+
+      - name: Build
+        run: npm run build
+
+      - name: Semantic Release
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
