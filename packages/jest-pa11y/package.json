@@ -55,6 +55,7 @@
   "scripts": {
     "build": "rm -rf build && tsc -p tsconfig.build.json",
     "postbuild": "cp -R src/types ./build",
+    "registry:unpublish": "npm unpublish -f --registry http://localhost:4873/ jest-pa11y",
     "test": "JEST_PA11Y_SERVER_PORT=4000 jest --config .jestrc.js --runInBand --detectOpenHandles --forceExit"
   },
   "types": "build/index.d.ts",

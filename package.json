@@ -28,7 +28,8 @@
     "lint-staged": "^10.5.1",
     "prettier": "2.1.2",
     "semantic-release": "^17.2.2",
-    "typescript": "^4.0.5"
+    "typescript": "^4.0.5",
+    "verdaccio": "^4.8.1"
   },
   "engines": {
     "node": ">= 12.0.0"
@@ -44,11 +45,15 @@
     "build": "lerna run build",
     "clean": "lerna clean --yes && rm -rf node_modules",
     "commit": "cz",
-    "lerna:dry-run": "lerna publish --skip-npm --no-git-tag-version --no-push",
     "lint": "eslint . --ext js,ts",
     "lint:fix": "npm run lint -- --fix",
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap ",
+    "postregistry:unpublish": "git checkout lerna.json **/package-lock.json",
     "reinstall": "npm run clean && npm install",
+    "registry:publish": "npx --userconfig=.registry/.npmrc lerna publish --no-git-tag-version --no-push --no-verify-access --registry http://localhost:4873 --legacy-auth dGVzdDp0ZXN0",
+    "registry:start": "npx --userconfig=.registry/.npmrc verdaccio --config .registryrc.js",
+    "registry:unpublish": "lerna run registry:unpublish",
     "test": "lerna run test --stream --parallel"
-  }
+  },
+  "version": "1.1.5"
 }

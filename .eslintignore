@@ -1,10 +1,4 @@
 **/node_modules/**
 build
 coverage
-!.commitlintrc.js
-!.czrc.js
-!.huskyrc.js
-!.jestrc.js
-!.lintstagedrc.js
-!.prettierrc.js
-!.releaserc.js
+!.*rc.js
