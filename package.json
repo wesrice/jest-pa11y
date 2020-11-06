@@ -1,15 +1,5 @@
 {
   "author": "Wes Rice",
-  "dependencies": {
-    "@jest/types": "^26.6.1",
-    "chalk": "^4.0.0",
-    "jest-environment-jsdom": "^26.6.1",
-    "jest-environment-puppeteer": "^4.4.0",
-    "jest-matcher-utils": "^26.0.1",
-    "pa11y": "^5.3.0",
-    "tty-table": "^4.1.3"
-  },
-  "description": "Custom Jest matcher for Pa11y for testing accessibility",
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
@@ -19,22 +9,12 @@
     "@octokit/core": "^3.2.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/vue": "^5.0.4",
-    "@types/enzyme": "^3.10.8",
-    "@types/enzyme-adapter-react-16": "^1.0.6",
-    "@types/jest-environment-puppeteer": "^4.4.0",
-    "@types/pa11y": "^5.3.1",
-    "@types/react": "^16.9.55",
-    "@types/react-dom": "^16.9.9",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
     "@vue/test-utils": "^1.0.0-beta.31",
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.12.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.15.0",
@@ -44,48 +24,31 @@
     "eslint-plugin-security": "^1.4.0",
     "husky": "^4.3.0",
     "jest": "^26.6.3",
+    "lerna": "^3.22.1",
     "lint-staged": "^10.5.1",
     "prettier": "2.1.2",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
     "semantic-release": "^17.2.2",
-    "ts-jest": "^26.4.3",
-    "typescript": "^4.0.5",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "typescript": "^4.0.5"
   },
   "engines": {
     "node": ">= 12.0.0"
   },
-  "files": [
-    "build",
-    "jest-preset.json"
-  ],
-  "keywords": [
-    "jest",
-    "matcher",
-    "pa11y",
-    "accessibility",
-    "a11y"
-  ],
   "license": "MIT",
-  "main": "build/index.js",
   "name": "jest-pa11y",
   "peerDependencies": {
     "pa11y": "^5.3.0"
   },
+  "private": true,
   "repository": "wesrice/jest-pa11y",
   "scripts": {
-    "build": "rm -rf build && tsc -p tsconfig.build.json",
+    "build": "lerna run build",
+    "clean": "lerna clean --yes && rm -rf node_modules",
     "commit": "cz",
+    "lerna:dry-run": "lerna publish --skip-npm --no-git-tag-version --no-push",
     "lint": "eslint . --ext js,ts",
     "lint:fix": "npm run lint -- --fix",
-    "postbuild": "cp -R src/types ./build",
-    "semantic-release": "semantic-release",
-    "test": "npm run test:unit && npm run test:integration && npm run test:e2e",
-    "test:integration": "jest ./tests/integration --config .jestrc.js --runInBand --detectOpenHandles --forceExit",
-    "test:unit": "jest ./src --config .jestrc.js --runInBand --detectOpenHandles --forceExit"
-  },
-  "types": "build/index.d.ts",
-  "version": "1.1.5"
+    "postinstall": "lerna bootstrap",
+    "reinstall": "npm run clean && npm install",
+    "test": "lerna run test --stream --parallel"
+  }
 }

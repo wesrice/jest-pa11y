@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import { runPa11y } from '../../src';
+import { runPa11y } from '../src';
 
 describe('react', () => {
   let goodElement: React.ReactElement;

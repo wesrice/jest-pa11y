@@ -1,14 +1,16 @@
 {
   "dependencies": {
-    "jest": "^26.6.1"
+    "jest": "^26.6.1",
+    "jest-pa11y": "^1.1.5"
   },
   "description": "End-to-end test for `jest-pa11y` + JavaScript",
   "jest": {
     "preset": "jest-pa11y"
   },
   "name": "jest-pa11y-e2e-js",
+  "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "JEST_PA11Y_SERVER_PORT=4001 jest"
   },
-  "version": "0.1.0"
+  "version": "1.1.5"
 }

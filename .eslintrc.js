@@ -19,23 +19,12 @@ module.exports = {
     jestPuppeteer: true,
     page: true,
   },
-  overrides: [
-    {
-      extends: ['plugin:import/typescript'],
-      files: ['*.ts'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        ecmaVersion: 12,
-        sourceType: 'module',
-        tsconfigRootDir: './src',
-      },
-    },
-  ],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'jest', 'import', 'prettier', 'security'],
+  plugins: ['jest', 'import', 'prettier', 'security'],
+  root: true,
   rules: {
     'jest/no-hooks': ['error', { allow: ['afterEach', 'beforeAll'] }],
     'prettier/prettier': 'error',

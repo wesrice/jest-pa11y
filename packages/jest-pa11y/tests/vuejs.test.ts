@@ -2,7 +2,7 @@ import { mount, VueClass } from '@vue/test-utils';
 import { render } from '@testing-library/vue';
 import Vue from 'vue';
 
-import { runPa11y } from '../../src';
+import { runPa11y } from '../src';
 
 describe('vue', () => {
   let badElement: VueClass<Vue>;

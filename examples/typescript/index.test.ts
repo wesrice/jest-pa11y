@@ -1,3 +1,4 @@
+import 'jest-pa11y/build/extendExpect';
 import { runPa11y } from 'jest-pa11y';
 
 describe('`jest-pa11y` end-to-end test', () => {

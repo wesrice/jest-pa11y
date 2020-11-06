@@ -38,41 +38,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build packages
         run: npm run build
 
-      - name: Run unit tests
-        run: npm run test:unit
-
-      - name: Run integration tests
-        run: npm run test:integration
-
-      - name: Make `jest-pa11y` dependency linkable
-        run: npm link
-
-      - name: Install JavaScript end-to-end test dependencies
-        run: npm install
-        working-directory: tests/e2e/js
-
-      - name: Link to `jest-pally` dependency
-        run: npm link 'jest-pa11y'
-        working-directory: tests/e2e/js
-
-      - name: Run JavaScript end-to-end tests
-        run: npm run test
-        working-directory: tests/e2e/js
-
-      - name: Install TypeScript end-to-end test dependencies
-        run: npm install
-        working-directory: tests/e2e/ts
-
-      - name: Link to `jest-pally` dependency
-        run: npm link 'jest-pa11y'
-        working-directory: tests/e2e/ts
-
-      - name: Run TypeScript end-to-end tests
-        run: npm run test
-        working-directory: tests/e2e/ts
+      - name: Test packages
+        run: npx run test
 
   release:
     if: github.ref == 'refs/heads/main'
