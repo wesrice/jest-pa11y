@@ -10,6 +10,7 @@ module.exports = {
     'plugin:jest/all',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:prettier/recommended',
     'plugin:security/recommended',
   ],
@@ -39,5 +40,13 @@ module.exports = {
   rules: {
     'jest/no-hooks': ['error', { allow: ['afterEach', 'beforeAll'] }],
     'prettier/prettier': 'error',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
   },
 };
