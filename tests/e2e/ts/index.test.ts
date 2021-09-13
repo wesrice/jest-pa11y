@@ -1,4 +1,4 @@
-import { runPa11y } from 'jest-pa11y';
+import { runPa11y } from '../../../src';
 
 describe('`jest-pa11y` end-to-end test', () => {
   it('bad html', async () => {

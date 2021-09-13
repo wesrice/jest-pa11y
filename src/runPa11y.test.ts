@@ -93,10 +93,11 @@ describe('runPa11y()', () => {
         it('can be overridden via `configurePa11y()`', async () => {
           expect.assertions(2);
 
+          const id = 'foo';
           const fn = configurePa11y({
-            rootElement: 'foo',
+            rootElement: `#${id}`,
           });
-          await fn('<a href="#"></a>');
+          await fn(`<div id="${id}"><a href="#"></a></div>`);
           const [, options] = mockedPa11y.mock.calls[0];
 
           if (!options) {
@@ -104,15 +105,18 @@ describe('runPa11y()', () => {
           }
 
           expect(actualPa11y.defaults.rootElement).toBeNull();
-          expect(options.rootElement).toBe('foo');
+          expect(options.rootElement).toBe(`#${id}`);
         });
 
         it('can be overridden via `runPa11y()`', async () => {
           expect.assertions(2);
+
+          const id = 'foo';
           const fn = configurePa11y();
-          await fn('<a href="#"></a>', {
-            rootElement: 'foo',
+          await fn(`<div id="${id}"><a href="#"></a></div>`, {
+            rootElement: `#${id}`,
           });
+
           const [, options] = mockedPa11y.mock.calls[0];
 
           if (!options) {
@@ -120,7 +124,7 @@ describe('runPa11y()', () => {
           }
 
           expect(actualPa11y.defaults.rootElement).toBeNull();
-          expect(options.rootElement).toBe('foo');
+          expect(options.rootElement).toBe(`#${id}`);
         });
       });
 
