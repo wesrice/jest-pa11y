@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/wesrice/jest-pa11y/compare/v1.1.5...v1.2.0) (2021-09-13)
+
+
+### Bug Fixes
+
+* ignore linting of release commits ([ab9e7c5](https://github.com/wesrice/jest-pa11y/commit/ab9e7c5e76b98b3b748c7a5825fd45d781fc177d))
+
+
+### Features
+
+* bump supported Node.js versions ([516a8f3](https://github.com/wesrice/jest-pa11y/commit/516a8f3048b704b9122e474d74f243f57b324181))
+
 ## [1.1.5](https://github.com/wesrice/jest-pa11y/compare/v1.1.4...v1.1.5) (2020-11-05)
 
 
