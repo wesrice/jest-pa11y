@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/wesrice/jest-pa11y/compare/v1.2.0...v1.3.0) (2021-09-17)
+
+
+### Features
+
+* upgrade dependencies ([4c198fc](https://github.com/wesrice/jest-pa11y/commit/4c198fcf70422c77eddf745a7fb33e93b4443ca5))
+
 # [1.2.0](https://github.com/wesrice/jest-pa11y/compare/v1.1.5...v1.2.0) (2021-09-13)
 
 
